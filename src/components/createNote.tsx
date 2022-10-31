@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Form, Button, Alert } from 'react-bootstrap';
 import { INote } from "../models/note.model";
 
@@ -12,7 +12,8 @@ const CreateNote: React.FC<ICreateNote> = ({ notes, setNotes }) => {
   const titleRef = useRef<HTMLInputElement | null>(null);
   const textRef = useRef<HTMLTextAreaElement | null>(null);
   const colorRef = useRef<HTMLInputElement | null>(null);
-
+  // React.MutableRefObject<HTMLInputElement | null>
+  
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (titleRef.current?.value === "" || textRef.current?.value === "") {
@@ -28,6 +29,7 @@ const CreateNote: React.FC<ICreateNote> = ({ notes, setNotes }) => {
     }]);
 
     (titleRef.current as HTMLInputElement).value = "";
+    (textRef.current as HTMLTextAreaElement).value = "";
     (textRef.current as HTMLTextAreaElement).value = "";
   }
 
@@ -50,6 +52,7 @@ const CreateNote: React.FC<ICreateNote> = ({ notes, setNotes }) => {
           <Form.Label htmlFor="colorInput">Notes Color</Form.Label>
           <Form.Control type="color" id="colorInput" defaultValue="#dfdfdf" title="Choose your color" ref={colorRef} />
         </Form.Group>
+
         <Button type="submit" variant="primary">
           Submit
         </Button>

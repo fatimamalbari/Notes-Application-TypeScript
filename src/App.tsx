@@ -14,7 +14,7 @@ function App() {
     color: "#dfdfdf",
     date: (new Date).toString()
   }]);
-
+  
   return (
     <div>
       <Header />
@@ -24,7 +24,6 @@ function App() {
             <NotesList notes={notes} setNotes={setNotes} />
           </Col>
         </Row>
-
         <Row>
           <Col>
             <CreateNote notes={notes} setNotes={setNotes} />

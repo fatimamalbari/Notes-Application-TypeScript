@@ -8,7 +8,6 @@ interface INotesList {
 }
 
 const NotesList: React.FunctionComponent<INotesList> = ({ notes, setNotes }) => {
-
   const handleDelete = (id: string) => {
     setNotes(notes.filter(note => note.id !== id))
   }

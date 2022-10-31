@@ -1,9 +1,7 @@
 import React from "react";
 import { Container, Navbar } from 'react-bootstrap';
 
-interface IHeader {
-
-}
+interface IHeader {}
 
 const Header: React.FunctionComponent<IHeader> = () => {
   return (
